@@ -28,48 +28,17 @@ error() {
   echo ""
 }
 
-done=false
-
-output "Minecraft Instalation Script | $SCRIPT_VERSION"
+output "Minecraft Installation Script | $SCRIPT_VERSION"
 output
-output "Support Server"
-output "https://discord.arcticwoof.ga"
+output "by How2Minecraft"
+output "https://www.youtube.com/channel/UCZSZBeR-JM2u8nFhcuvMPjA"
 output
-output "This script is ONLY used for owned Virtual Machine! NOT SHELL MACHINE!"
-
+output "Subscribe to How2Minecraft on YouTube!"
 output
 
 java() {
   bash <(curl -s https://raw.githubusercontent.com/DumbCaveSpider/Minecraft-Linux-Installation/main/java.sh)
 }
 
-bedrock() {
-  bash <(curl -s https://raw.githubusercontent.com/DumbCaveSpider/Minecraft-Linux-Installation/main/bedrock.sh)
-}
-
-while [ "$done" == false ]; do
-  options=(
-    "Java"
-    "Bedrock"
-  )
-
-  actions=(
-    "java"
-    "bedrock"
-  )
-
-  output "Numeber:"
-
-  for i in "${!options[@]}"; do
-    output "[$i] ${options[$i]}"
-  done
-
-  echo -n "* Input 0-$((${#actions[@]} - 1)): "
-  read -r action
-
-  [ -z "$action" ] && error "Input is required" && continue
-
-  valid_input=("$(for ((i = 0; i <= ${#actions[@]} - 1; i += 1)); do echo "${i}"; done)")
-  [[ ! " ${valid_input[*]} " =~ ${action} ]] && error "Invalid option"
-  [[ " ${valid_input[*]} " =~ ${action} ]] && done=true && eval "${actions[$action]}"
-done
+output "Starting Java installation..."
+java

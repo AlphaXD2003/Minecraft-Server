@@ -18,11 +18,11 @@ done=false
 output "What server do you want to setup? (Java)"
 
 vanilla() {
-  bash <(curl -s https://raw.githubusercontent.com/DumbCaveSpider/Minecraft-Linux-Installation/main/JavaInstallScripts/VanillaInstall)
+  bash <(curl -s https://raw.githubusercontent.com/AlphaXD2003/Minecraft-Server/main/JavaInstallScripts/VanillaInstall)
 }
 
 paper() {
-  bash <(curl -s https://raw.githubusercontent.com/DumbCaveSpider/Minecraft-Linux-Installation/main/JavaInstallScripts/PaperInstall)
+  bash <(curl -s https://raw.githubusercontent.com/AlphaXD2003/Minecraft-Server/main/JavaInstallScripts/PaperInstall)
 }
 
 fabric() {
